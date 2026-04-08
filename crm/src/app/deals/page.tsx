@@ -185,19 +185,22 @@ export default function DealsPage() {
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
-    e.currentTarget.style.opacity = '0.5';
-    e.currentTarget.style.borderColor = '#3b82f6';
+    const target = e.currentTarget as HTMLElement;
+    target.style.opacity = '0.5';
+    target.style.borderColor = '#3b82f6';
   };
 
   const handleDragLeave = (e: React.DragEvent) => {
-    e.currentTarget.style.opacity = '1';
-    e.currentTarget.style.borderColor = 'transparent';
+    const target = e.currentTarget as HTMLElement;
+    target.style.opacity = '1';
+    target.style.borderColor = 'transparent';
   };
 
   const handleDropOnStage = (stage: DealStage, e: React.DragEvent) => {
     e.preventDefault();
-    e.currentTarget.style.opacity = '1';
-    e.currentTarget.style.borderColor = 'transparent';
+    const target = e.currentTarget as HTMLElement;
+    target.style.opacity = '1';
+    target.style.borderColor = 'transparent';
 
     if (draggedDeal && draggedDeal.stage !== stage) {
       try {
